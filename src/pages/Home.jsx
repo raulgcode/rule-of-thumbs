@@ -1,24 +1,29 @@
 import React from 'react';
 import { getUsers } from "../services/users.service";
 import { useAppContext } from '../context';
-import { LOAD_USERS } from '../context/reducer'
-import { Body, Header, Navbar } from '../components';
+
+import { Body, Header, Navbar, RulingCard } from '../components';
+
+import './index.css'
 
 const Home = () => {
-  const {state, dispatch} = useAppContext()
+  const {state, loadUsers} = useAppContext()
 
   React.useEffect(() => {
     (async () => {
       const {data: users} = await getUsers();
-      dispatch({type: LOAD_USERS, payload: { users}})
+      loadUsers(users)
     })();
-  }, [dispatch]);
+  }, []);
+
   return (
     <>
       <Navbar />
       <Header />
       <Body>
-        {state.users.length > 0 && state.users.map(user => <p key={user.id}>{user.name}</p>)}
+        <div className="grid horizontal-scroll">
+          {state.users.length > 0 && state.users.map(user => <RulingCard key={user.id} user={user} />)}
+        </div>
       </Body>
     </>
   )
