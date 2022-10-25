@@ -1,4 +1,4 @@
-import { LOAD_USERS, DO_VOTE, RESET_VOTE } from "./reducer";
+import { LOAD_USERS, DO_VOTE, RESET_VOTE, CHANGE_VIEW } from "./reducer";
 import { updateVote } from "../services/users.service";
 
 export const appActions = (dispatch) => ({
@@ -13,5 +13,8 @@ export const appActions = (dispatch) => ({
   },
   resetVote: (user) => {
     dispatch({ type: RESET_VOTE, payload: { user } });
+  },
+  changeView: (view) => {
+    dispatch({ type: CHANGE_VIEW, payload: { view } });
   },
 });

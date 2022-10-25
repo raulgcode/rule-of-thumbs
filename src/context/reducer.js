@@ -1,10 +1,12 @@
 export const LOAD_USERS = "LOAD_USERS";
 export const DO_VOTE = "DO_VOTE";
 export const RESET_VOTE = "RESET_VOTE";
+export const CHANGE_VIEW = "CHANGE_VIEW";
 
 export const initialState = {
   users: [],
   votedUsers: new Set(),
+  view: "grid",
 };
 
 export const appReducer = (state = initialState, action) => {
@@ -21,7 +23,8 @@ export const appReducer = (state = initialState, action) => {
       state.votedUsers.delete(action.payload.user.id);
       return { ...state };
     }
-
+    case CHANGE_VIEW:
+      return { ...state, view: action.payload.view };
     default:
       return state;
   }

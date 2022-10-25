@@ -52,7 +52,7 @@ const RulingCard = ({user}) => {
 
   return (
     <div
-      className="card"
+      className={`card ${state.view}`}
       style={{ backgroundImage: `url('../assets/img/${user.picture}')` }}
     >
       <div className="card--body">

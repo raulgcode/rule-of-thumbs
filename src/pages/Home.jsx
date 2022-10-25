@@ -2,7 +2,7 @@ import React from 'react';
 import { getUsers } from "../services/users.service";
 import { useAppContext } from '../context';
 
-import { Body, Header, Navbar, RulingCard } from '../components';
+import { Body, Header, Navbar, RulingCard, ViewSelector } from '../components';
 
 import './index.css'
 
@@ -21,6 +21,7 @@ const Home = () => {
       <Navbar />
       <Header />
       <Body>
+        <ViewSelector />
         <div className="grid horizontal-scroll">
           {state.users.length > 0 && state.users.map(user => <RulingCard key={user.id} user={user} />)}
         </div>

@@ -1,4 +1,4 @@
-.card {
+.card.grid {
   position: relative;
   width: 300px;
   height: 300px;
@@ -108,4 +108,18 @@
 
 .vote-selected {
   border: 2px solid #fff;
+}
+
+.dropdown {
+  border: 2px solid #000;
+  background: #fff;
+  border-radius: 0;
+  text-align: center;
+  padding: 10px;
+}
+
+.view-selector-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
 }
