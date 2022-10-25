@@ -43,6 +43,7 @@ const RulingCard = ({user}) => {
     setIsDown(false)
     setIsUp(false)
     vote(user)
+    alert("Thank you for your vote!")
   }
 
   const onVoteAgain = () => {
