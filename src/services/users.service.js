@@ -5,16 +5,9 @@ export const getUsers = () => {
   return axios.get(`${BASE_API_URL}/users`);
 };
 
-export const updateNegativeVote = async (userId, user) => {
+export const updateVote = async (user) => {
   const { votes } = user;
-  return axios.put(`${BASE_API_URL}/users/${userId}/vote`, {
-    votes: { negative: votes.negative + 1 },
-  });
-};
-
-export const updatePositiveVote = async (userId, user) => {
-  const { votes } = user;
-  return axios.put(`${BASE_API_URL}/users/${userId}/vote`, {
-    votes: { negative: votes.positive + 1 },
+  return axios.put(`${BASE_API_URL}/users/${user.id}/vote`, {
+    votes,
   });
 };
