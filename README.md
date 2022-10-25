@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Rule of thumbs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Zemoga assesment
 
 ## Initial Set Up
 
