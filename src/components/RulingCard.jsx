@@ -15,6 +15,7 @@ const RulingCard = ({user}) => {
   const {state, vote, resetVote} = useAppContext()
   const [isDown, setIsDown] = React.useState(false)
   const [isUp, setIsUp] = React.useState(false)
+  const gradient = "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(136, 136, 136) -0.21%, rgb(102, 102, 102) 0%, rgba(51, 51, 51, 0.6) 88.88%)"
   
   const onUpSelected = () => {
     setIsDown(false)
@@ -49,13 +50,13 @@ const RulingCard = ({user}) => {
   const onVoteAgain = () => {
     resetVote(user)
   }
-
+  
   return (
     <div
       className={`card ${state.view}`}
-      style={{ backgroundImage: `url('../assets/img/${user.picture}')` }}
+      style={{ backgroundImage: state.view === 'list'? `${gradient}, url('../assets/img/${user.picture}.png')` : `url('../assets/img/${user.picture}@2x.png')`}}
     >
-      <div className="card--body">
+      <div className={`card--body ${state.view}`}>
         <div className="row">
           <div className="col">
             <Thumb votes={user.votes} />
@@ -101,7 +102,7 @@ const RulingCard = ({user}) => {
           </div>
         </div>
       </div>
-      <div className="card--footer">
+      <div className={`card--footer ${state.view}`}>
         <div className="gauge-bar-wrapper">
           <span
             style={{ width: `${user.votes.percentagePositive}%` }}
