@@ -32,7 +32,7 @@ const Home = () => {
       <Header />
       <Body>
         <ViewSelector />
-        <div className={`horizontal-scroll ${state.view}`}>
+        <div data-testid="home-wrapper" className={`horizontal-scroll ${state.view}`}>
           {state.users.length > 0 && state.users.map(user => <RulingCard key={user.id} user={user} />)}
         </div>
       </Body>

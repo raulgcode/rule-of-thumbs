@@ -108,4 +108,11 @@ describe("App", () => {
     expect(positiveBarNumber).toBeInTheDocument();
     expect(positiveBarNumber.innerHTML).toBe("30.69%");
   });
+
+  it("should change to grid view when screen width is less than 768px", async () => {
+    window.innerWidth = 767;
+    render(<Home />);
+    const homeWrapper = await screen.findByTestId("home-wrapper");
+    expect(homeWrapper).toHaveClass("grid");
+  });
 });
