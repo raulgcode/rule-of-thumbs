@@ -14,13 +14,7 @@ export const AppContextProvider = ({children}) => {
     resetVote,
     changeView,
   }), 
-  [
-    state,
-    loadUsers, 
-    vote,
-    resetVote,
-    changeView,
-  ])
+  [state, loadUsers, vote, resetVote, changeView])
 
   return (
     <AppContext.Provider value={value}>

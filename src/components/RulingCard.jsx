@@ -73,6 +73,7 @@ const RulingCard = ({user}) => {
             ) : (
               <>
                 <button
+                  aria-label="button-vote-positive"
                   onClick={onUpSelected}
                   type="button"
                   className={`button thumbs-up-btn ${
@@ -82,6 +83,7 @@ const RulingCard = ({user}) => {
                   <img src={thumbsUp} alt="thumbs up" />
                 </button>
                 <button
+                  aria-label="button-vote-negative"
                   onClick={onDownSelected}
                   type="button"
                   className={`button thumbs-down-btn ${
@@ -105,12 +107,16 @@ const RulingCard = ({user}) => {
       <div className={`card--footer ${state.view}`}>
         <div className="gauge-bar-wrapper">
           <span
+            data-testid="positive-gauge-bar" 
+            aria-label={`${user.votes.percentagePositive}%`}
             style={{ width: `${user.votes.percentagePositive}%` }}
             className="gauge-bar positive-bar"
           >
             {user.votes.percentagePositive}%
           </span>
           <span
+            data-testid="negative-gauge-bar" 
+            aria-label={`${user.votes.percentageNegative}%`}
             style={{ width: `${user.votes.percentageNegative}%` }}
             className="gauge-bar negative-bar"
           >

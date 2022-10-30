@@ -13,7 +13,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
@@ -31,6 +32,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios)"
     ]
   }
 }
