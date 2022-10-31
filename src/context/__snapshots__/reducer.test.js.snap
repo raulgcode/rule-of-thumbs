@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducer should return default state object 1`] = `
+Object {
+  "users": Array [],
+  "view": "grid",
+  "votedUsers": Set {},
+}
+`;

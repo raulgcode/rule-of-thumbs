@@ -10,7 +10,7 @@ const ViewSelector = () => {
 
   return (
     <div className='view-selector-wrapper'>
-      <select className="dropdown" value={state.view} onChange={onSelectView}>
+      <select data-testid="view-selector" className="dropdown" value={state.view} onChange={onSelectView}>
         <option value="list">LIST</option>
         <option value="grid">GRID</option>
       </select>

@@ -110,9 +110,26 @@ describe("App", () => {
   });
 
   it("should change to grid view when screen width is less than 768px", async () => {
-    window.innerWidth = 767;
     render(<Home />);
+    global.innerWidth = 600;
+    global.dispatchEvent(new Event("resize"));
     const homeWrapper = await screen.findByTestId("home-wrapper");
     expect(homeWrapper).toHaveClass("grid");
+  });
+
+  it("should default view if screen width is >= 768px", async () => {
+    render(<Home />);
+    global.innerWidth = 800;
+    global.dispatchEvent(new Event("resize"));
+    const homeWrapper = await screen.findByTestId("home-wrapper");
+    expect(homeWrapper).toHaveClass("grid");
+  });
+
+  it("should change List View on select List in dropdow", async () => {
+    render(<Home />);
+    const viewSelector = await screen.findByTestId("view-selector");
+    user.selectOptions(viewSelector, "list");
+    const homeWrapper = await screen.findByTestId("home-wrapper");
+    expect(homeWrapper).toHaveClass("list");
   });
 });

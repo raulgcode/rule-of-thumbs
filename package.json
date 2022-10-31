@@ -37,6 +37,11 @@
   "jest": {
     "transformIgnorePatterns": [
       "node_modules/(?!axios)"
+    ],
+    "collectCoverageFrom": [
+      "!<rootDir>/src/testUtil.js",
+      "!src/index.js",
+      "!<rootDir>/**/*.{svg,png,json,css,snap}"
     ]
   },
   "devDependencies": {

@@ -9,7 +9,7 @@ export const initialState = {
   view: "grid",
 };
 
-export const appReducer = (state = initialState, action) => {
+export const appReducer = (state, action) => {
   switch (action.type) {
     case LOAD_USERS:
       return { ...state, users: action.payload.users };
