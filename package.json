@@ -41,6 +41,7 @@
     ],
     "collectCoverageFrom": [
       "!<rootDir>/src/testUtil.js",
+      "!<rootDir>/src/mocks/*",
       "!src/index.js",
       "!<rootDir>/**/*.{svg,png,json,css,snap}"
     ]
